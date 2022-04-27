@@ -1,9 +1,10 @@
-export class Recipe {
-  public id: number;
-  public name: string;
+import { Ingredient } from './ingredient';
 
-  constructor(id: number, name: string) {
-    this.id = id;
-    this.name = name;
-  }
+export class Recipe {
+  constructor(
+    public id: number,
+    public name: string,
+    public ingredients: Ingredient[],
+    public instructions: string[]
+  ) {}
 }
