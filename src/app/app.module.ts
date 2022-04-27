@@ -7,6 +7,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { HomeComponent } from './home/home.component';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import { CreateRecipeFormComponent } from './create-recipe-form/create-recipe-form.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,13 +16,11 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
     NavigationComponent,
     RecipesComponent,
     HomeComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    CreateRecipeFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

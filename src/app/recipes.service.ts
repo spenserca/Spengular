@@ -2,13 +2,6 @@ import { Injectable } from '@angular/core';
 import { Recipe } from './recipe';
 import { Observable, of } from 'rxjs';
 
-// instructions
-//
-//
-//
-//
-//
-
 @Injectable({
   providedIn: 'root',
 })
@@ -308,5 +301,12 @@ export class RecipesService {
 
   public GetRecipeById(id: number): Observable<Recipe> {
     return of(this.recipes.filter((r) => r.id === id)[0]);
+  }
+
+  public AddRecipe(recipe: Recipe): void {
+    const nextId = this.recipes.length + 1;
+    recipe.id = nextId;
+
+    this.recipes.push(recipe);
   }
 }

@@ -4,10 +4,16 @@
   }
 </style>
 
-<p>Choose a recipe to view its details.</p>
-<ul class="recipes">
-  <li *ngFor="let recipe of recipes">
-    <a [routerLink]="['/recipes', recipe.id]" [ngClass]="recipe.id % 2 == 0 ? 'gray' : ''">
-      <span>{{recipe.name}}</span></a>
-  </li>
-</ul>
+<div>
+  <p>Choose a recipe to view its details.</p>
+  <ul class="recipes">
+    <li *ngFor="let recipe of recipes">
+      <a [routerLink]="['/recipes', recipe.id]" [ngClass]="recipe.id % 2 == 0 ? 'gray' : ''">
+        <span>{{recipe.name}}</span></a>
+    </li>
+  </ul>
+</div>
+<div>
+  <p>Or submit a new recipe!</p>
+  <app-create-recipe-form></app-create-recipe-form>
+</div>
