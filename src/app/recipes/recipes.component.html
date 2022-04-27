@@ -1,6 +1,13 @@
-<p>recipes works!</p>
+<style>
+  .gray {
+    background: lightgray;
+  }
+</style>
+
+<p>Choose a recipe to view its details.</p>
 <ul class="recipes">
   <li *ngFor="let recipe of recipes">
-    <span>{{recipe.name}}</span>
+    <a [routerLink]="['/recipes', recipe.id]" [ngClass]="recipe.id % 2 == 0 ? 'gray' : ''">
+      <span>{{recipe.name}}</span></a>
   </li>
 </ul>
